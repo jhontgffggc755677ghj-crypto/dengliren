@@ -206,7 +206,7 @@ app.use('/api/todos', requireAuth);
 app.get('/api/todos', async (req, res) => {
   try {
     const todos = await db.all(
-      'SELECT * FROM todos WHERE userId = ? ORDER BY createdAt DESC',
+      'SELECT * FROM todos WHERE userId = ? ORDER BY createdAt DESC, id DESC',
       req.user.id
     );
     res.json(todos);
