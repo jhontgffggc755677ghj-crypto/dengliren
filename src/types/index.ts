@@ -1,3 +1,17 @@
+export interface User {
+  id: number;
+  username: string;
+}
+
+export interface AuthResponse {
+  token: string;
+  user: User;
+}
+
+export interface ApiError {
+  message: string;
+}
+
 export interface Todo {
   id: number;
   userId: number;
